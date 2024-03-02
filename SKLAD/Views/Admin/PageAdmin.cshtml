@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/but.css" />
+<h1>Вы авторизованы как администратор</h1>
+<form asp-action="ShowCatalog" asp-controller="Admin">
+    <div class="form-group">
+        <input type="submit" value="Каталог" class="btn btn1" />
+    </div>
+</form>
+<form asp-action="ShowOrders" asp-controller="Admin">
+    <div class="form-group">
+        <input type="submit" value="Посмотреть заказы" class="btn btn1" />
+    </div>
+</form>
+<form asp-action="AddNewEmployee1" asp-controller="Admin">
+    <div class="form-group">
+        <input type="submit" value="Добавить нового сотрудника" class="btn btn1" />
+    </div>
+</form>
+<form asp-action="AddProduct1" asp-controller="Admin">
+    <div class="form-group">
+        <input type="submit" value="Добавить новый товар" class="btn btn1" />
+    </div>
+</form>
+<form asp-action="ChangeCountProduct1" asp-controller="Admin">
+    <div class="form-group">
+        <input type="submit" value="Редактировать количество товара" class="btn btn1" />
+    </div>
+</form>

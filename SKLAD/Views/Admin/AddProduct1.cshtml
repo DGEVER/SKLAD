@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/but.css" />
+<h1>Добавление нового товара</h1>
+<form asp-action="AddProduct2" asp-controller="Admin">
+    <ul style="list-style:none;" class="wrapper">
+        <li class="form-row">
+            <label>Выберите категорию</label>
+            <select name="id_category">
+        <option disabled>Выберите категорию</option>
+        @foreach (var item in ViewBag.Category)
+       {
+           <option value="@item.ID">@item.Descr</option>
+       }
+   </select>
+   </li>
+   <li class="form-row">
+       <label>Выберите цвет</label>
+       <select name="id_color">
+        <option disabled>Выберите цвет</option>
+        @foreach (var item in ViewBag.Color)
+       {
+           <option value="@item.ID">@item.Descr</option>
+       }
+    </select>
+   </li>
+   <li class="form-row">
+       <label>Выберите размер</label>
+       <select name="id_size">
+        <option disabled>Выберите размер</option>
+        @foreach (var item in ViewBag.Size)
+       {
+           <option value="@item.ID">@item.Descr</option>
+       }
+    </select>
+   </li>
+   <li class="form-row">
+       <label>Ведите название товара</label>
+       <input type="text" name="name" />
+   </li>
+   <li class="form-row">
+       <label>Ведите количество товара</label>
+       <input type="number" name="count" />
+   </li>
+        <input type="submit" value="Отправить" class="btn btn1" />
+    </ul>
+</form>

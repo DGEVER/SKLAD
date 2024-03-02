@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Состав заказа</h1>
+<link rel="stylesheet" href="~/css/but.css" />
+<form asp-action="Otmena" asp-controller="Client">
+    <div class="form-group">
+        <input type="hidden" name="id_order" value="@ViewBag.id_order" />
+        <input type="submit" value="Отмена заказа" class="btn btn1" />
+    </div>
+</form>
+<h2>История статусов</h2>
+<table>
+    <thead>
+        <td>Дата</td>
+        <td>Статус</td>
+    </thead>
+    @foreach (var item in ViewBag.ChangeLog)
+   {
+       <tr>
+           <td>@item.Date</td>
+           <td>@item.NameStatus</td>
+       </tr>
+   }
+</table>
+
+<table>
+    <tr>
+        <th>Название товара</th>
+        <th>Категория</th>
+        <th>Размер</th>
+        <th>Цвет</th>
+        <th>Количество</th>
+    </tr>
+    @foreach (var item in @ViewBag.VS)
+   {
+       
+        <tr>
+           <td>@item.NameP</td>
+           <td>@item.NameCategory</td>
+           <td>@item.NameSize</td>
+           <td>@item.NameColor</td>
+           <td>@item.Count</td>
+       </tr>
+   }
+
+</table>

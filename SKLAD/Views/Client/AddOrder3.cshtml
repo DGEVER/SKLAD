@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/but.css" />
+<h1>Добавление товара в заказ</h1>
+<form asp-action="AddOrder4" asp-controller="Client">
+    <ul style="list-style:none;" class="wrapper">
+   <li class="form-row">
+       <label>Выберите товар</label>
+       <select name="id_product">
+        <option disabled>Выберите товар</option>
+        @foreach (var item in ViewBag.Product)
+       {
+           <option value="@item.Id">@item.Name @item.CategoryDec @item.ColorDec @item.SizeDec @item.Count</option>
+       }
+    </select>
+   </li>
+   <input type="hidden" name="id_order" value="@ViewBag.id_order" />
+   <li class="form-row">
+       <label>Ведите количество товара</label>
+       <input type="number" name="count" />
+   </li>
+        <input type="submit" value="Добавить" class="btn btn1" />
+    </ul>
+</form>

@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/but.css" />
+<h1>Заказ успешно создан, хотите еще что-то добавить к нему?</h1>
+<form asp-action="AddOrder3" asp-controller="Client">
+    <div class="form-group">
+        <input type="hidden" name="id_order" value=@ViewBag.id_order />
+        <input type="submit" value="Добавить еще товар" class="btn btn1" />
+    </div>
+</form>
+<form asp-action="PageClient" asp-controller="Client">
+    <div class="form-group">
+        <input type="submit" value="Нет" class="btn btn1" />
+    </div>
+</form>

@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{}
+<h1>Заказы</h1>
+<table>
+    <tr>
+        <th>ID Заказа</th>
+        <th>Покупатель</th>
+        <th>Статус заказа</th>
+    </tr>
+    @foreach (var item in @ViewBag.Orders)
+   {
+       
+        <tr>
+           <td><a href="~/Employee/ShowAboutOrder?id_order=@item.Id">@item.Id</a></td>
+           <td>@item.Name</td>
+           <td>@item.Status</td>
+       </tr>
+   }
+
+</table>

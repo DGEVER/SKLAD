@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="~/css/but.css" />
+<h1>Добавление нового сотрудника</h1>
+<form asp-action="AddNewEmployee2" asp-controller="Admin">
+    <ul style="list-style:none;" class="wrapper">
+        <li class="form-row">
+            <label>Введите логин</label>
+            <input type="text" name="login" />
+        </li>
+        <li class="form-row">
+            <label>Введите пароль</label>
+            <input type="text" name="password" />
+        </li>
+        <input type="submit" value="Добавить" class="btn btn1" />
+    </ul>
+</form>
